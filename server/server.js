@@ -14,9 +14,7 @@ app.post("/todos", async (req, res) => {
     const todo = new Todo({
       text: req.body.text
     });
-
     const result = await todo.save();
-
     res.send(result);
   } catch (error) {
     res.status(400).send(error);
@@ -26,3 +24,5 @@ app.post("/todos", async (req, res) => {
 app.listen(3000, () => {
   console.log("Started on port 3000");
 });
+
+module.exports = { app };
